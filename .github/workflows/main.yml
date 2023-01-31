@@ -18,7 +18,7 @@ jobs:
         run: node index.js
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          USER_ID: 360250391
+          USER_ID: 366627824
           USER_TOKEN: ${{ secrets.USER_TOKEN }}
           REPO: "netease-cloud-music-card"
           AUTHOR: "Devo Zou"
