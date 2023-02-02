@@ -221,7 +221,7 @@ const {
                 </div>
                 <div class="music-list">
                     <div class="hello">
-                        <img class="neteasecloud" src="https://s1.music.126.net/style/favicon.ico" />
+                        <img class="neteasecloud" src="data:image/jpg;base64,${await getBase64('https://s1.music.126.net/style/favicon.ico')}" />
                         <a class="intro">这周正在听：</a>
                     </div>
                     <div>
