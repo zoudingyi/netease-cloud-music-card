@@ -211,7 +211,7 @@ const {
                 <div class="user">
                     <img class="avatar" src="data:image/jpg;base64,${await getBase64(avatarUrl)}"/>
                     <a class="username">${username}</a>
-                    <a class="button"></a>
+                    <a class="macOS"></a>
                     <div class="clear"></div>
                 </div>
                 <div class="most-music">
