@@ -55,16 +55,17 @@ const {
     var svgContent = "";
     try {
         svgContent = Buffer.from(
-`<svg width="310" height="490" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+`<svg width="530" height="280" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
    <a href="${songLink}">
-    <foreignObject width="310" height="490">
+    <foreignObject width="530" height="280">
         <div xmlns="http://www.w3.org/1999/xhtml" class="container" style="padding: 5px;">
-        <style>
+            <style>
             * {
                 box-sizing: border-box;
+                image-rendering: crisp-edges;
+                image-rendering: -webkit-optimize-contrast;
                 color:black;
                 font-size: 0;
-                font-family: 'PingFang SC', 'Helvetica Neue', 'Segoe UI', 'Microsoft YaHei', sans-serif !important;
             }
 
             html, body {
@@ -110,11 +111,11 @@ const {
             .username {
                 line-height: 32px;
                 vertical-align: middle;
-                font-size: 16px;
+                font-size: 14px;
                 margin-left: 5px;
             }
 
-            .button {
+            .macOS {
                 background: #28C131;
                 width: 16px;
                 height: 16px;
@@ -124,30 +125,54 @@ const {
                 margin-top: 8px;
                 margin-right: 3px;
             }
-
-            .hello {
-                margin: 10px;
-                margin-top: 5px;
+            
+            .most-music {
+                display: flex;
+                padding: 10px;
+            }
+            .most-music .cover-box {
+                position: relative;
+                width: 198px;
+                height: 198px;
+                animation: rotation 25s linear infinite;
+            }
+            .most-music .cover-box img {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            .most-music .cover-box .cover {
+                width: 130px;
+                height: 130px;
+                margin: 34px;
+            }
+            .most-music .cover-box .msk {
+                width: 100%;
+                height: 100%;
             }
 
-            .neteasecloud {
-                width: 28px;
-                height: 28px;
-                vertical-align: middle;
+            @keyframes rotation {
+                from {
+                    transform:rotate(0deg);
+                }
+                to {
+                    transform:rotate(360deg);
+                }
             }
-
-            .intro {
-                vertical-align: middle;
-                color: #BA0400;
-                font-size: 16px;
-                margin-left: 10px;
+            .music-list {
+                position: relative;
+                width: 300px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
-
+            
             .song {
                 margin: 0 auto;
                 width: 260px;
-                font-size: 20px;
                 margin-top: 10px;
+                font-size: 16px;
+                font-weight: bold;
                 overflow: hidden;
                 white-space: nowrap;
                 text-overflow: ellipsis;
@@ -161,43 +186,27 @@ const {
                 white-space: nowrap;
                 text-overflow: ellipsis;
                 opacity: 0.5;
-                font-size: 16px;
+                font-size: 14px;
             }
-
-            .cover {
-                width: 300px;
-                height: 300px;
-            }
-
-            .bars {
-                position: relative;
-                margin-top: 3px;
-                height: 30px;
-            }
-
-            .bar {
-                background: red;
-                bottom: 0;
-                height: 3px;
+            .hello {
                 position: absolute;
-                width: 3px;
-                animation: sound 0ms -1000ms linear infinite alternate;
+                top: 20px;
+            }
+            .neteasecloud {
+                width: 32px;
+                height: 32px;
+                vertical-align: middle;
+                margin-right: 10px;
             }
 
-            @keyframes sound {
-                0% {
-                    opacity: .35;
-                    height: 3px;
-                }
-                100% {
-                    opacity: 1;
-                    height: 20px;
-                }
+            .intro {
+                vertical-align: middle;
+                color: #BA0400;
+                font-size: 16px;
+                margin-right: 5px;
             }
+            </style>
 
-            .bar:nth-child(1)  { left: 1px; animation-duration: 412ms; }.bar:nth-child(2)  { left: 5px; animation-duration: 413ms; }.bar:nth-child(3)  { left: 9px; animation-duration: 466ms; }.bar:nth-child(4)  { left: 13px; animation-duration: 452ms; }.bar:nth-child(5)  { left: 17px; animation-duration: 423ms; }.bar:nth-child(6)  { left: 21px; animation-duration: 486ms; }.bar:nth-child(7)  { left: 25px; animation-duration: 416ms; }.bar:nth-child(8)  { left: 29px; animation-duration: 380ms; }.bar:nth-child(9)  { left: 33px; animation-duration: 405ms; }.bar:nth-child(10)  { left: 37px; animation-duration: 447ms; }.bar:nth-child(11)  { left: 41px; animation-duration: 409ms; }.bar:nth-child(12)  { left: 45px; animation-duration: 490ms; }.bar:nth-child(13)  { left: 49px; animation-duration: 392ms; }.bar:nth-child(14)  { left: 53px; animation-duration: 481ms; }.bar:nth-child(15)  { left: 57px; animation-duration: 373ms; }.bar:nth-child(16)  { left: 61px; animation-duration: 444ms; }.bar:nth-child(17)  { left: 65px; animation-duration: 397ms; }.bar:nth-child(18)  { left: 69px; animation-duration: 464ms; }.bar:nth-child(19)  { left: 73px; animation-duration: 396ms; }.bar:nth-child(20)  { left: 77px; animation-duration: 397ms; }.bar:nth-child(21)  { left: 81px; animation-duration: 370ms; }.bar:nth-child(22)  { left: 85px; animation-duration: 486ms; }.bar:nth-child(23)  { left: 89px; animation-duration: 484ms; }.bar:nth-child(24)  { left: 93px; animation-duration: 430ms; }.bar:nth-child(25)  { left: 97px; animation-duration: 402ms; }.bar:nth-child(26)  { left: 101px; animation-duration: 479ms; }.bar:nth-child(27)  { left: 105px; animation-duration: 417ms; }.bar:nth-child(28)  { left: 109px; animation-duration: 391ms; }.bar:nth-child(29)  { left: 113px; animation-duration: 433ms; }.bar:nth-child(30)  { left: 117px; animation-duration: 369ms; }.bar:nth-child(31)  { left: 121px; animation-duration: 439ms; }.bar:nth-child(32)  { left: 125px; animation-duration: 387ms; }.bar:nth-child(33)  { left: 129px; animation-duration: 423ms; }.bar:nth-child(34)  { left: 133px; animation-duration: 462ms; }.bar:nth-child(35)  { left: 137px; animation-duration: 435ms; }.bar:nth-child(36)  { left: 141px; animation-duration: 480ms; }.bar:nth-child(37)  { left: 145px; animation-duration: 429ms; }.bar:nth-child(38)  { left: 149px; animation-duration: 467ms; }.bar:nth-child(39)  { left: 153px; animation-duration: 429ms; }.bar:nth-child(40)  { left: 157px; animation-duration: 469ms; }.bar:nth-child(41)  { left: 161px; animation-duration: 372ms; }.bar:nth-child(42)  { left: 165px; animation-duration: 481ms; }.bar:nth-child(43)  { left: 169px; animation-duration: 408ms; }.bar:nth-child(44)  { left: 173px; animation-duration: 457ms; }.bar:nth-child(45)  { left: 177px; animation-duration: 465ms; }.bar:nth-child(46)  { left: 181px; animation-duration: 353ms; }.bar:nth-child(47)  { left: 185px; animation-duration: 430ms; }.bar:nth-child(48)  { left: 189px; animation-duration: 401ms; }.bar:nth-child(49)  { left: 193px; animation-duration: 356ms; }.bar:nth-child(50)  { left: 197px; animation-duration: 383ms; }.bar:nth-child(51)  { left: 201px; animation-duration: 491ms; }.bar:nth-child(52)  { left: 205px; animation-duration: 476ms; }.bar:nth-child(53)  { left: 209px; animation-duration: 396ms; }.bar:nth-child(54)  { left: 213px; animation-duration: 373ms; }.bar:nth-child(55)  { left: 217px; animation-duration: 362ms; }.bar:nth-child(56)  { left: 221px; animation-duration: 409ms; }.bar:nth-child(57)  { left: 225px; animation-duration: 375ms; }.bar:nth-child(58)  { left: 229px; animation-duration: 427ms; }.bar:nth-child(59)  { left: 233px; animation-duration: 368ms; }.bar:nth-child(60)  { left: 237px; animation-duration: 412ms; }.bar:nth-child(61)  { left: 241px; animation-duration: 381ms; }.bar:nth-child(62)  { left: 245px; animation-duration: 478ms; }.bar:nth-child(63)  { left: 249px; animation-duration: 449ms; }.bar:nth-child(64)  { left: 253px; animation-duration: 426ms; }.bar:nth-child(65)  { left: 257px; animation-duration: 481ms; }.bar:nth-child(66)  { left: 261px; animation-duration: 363ms; }.bar:nth-child(67)  { left: 265px; animation-duration: 365ms; }.bar:nth-child(68)  { left: 269px; animation-duration: 467ms; }.bar:nth-child(69)  { left: 273px; animation-duration: 424ms; }.bar:nth-child(70)  { left: 277px; animation-duration: 432ms; }.bar:nth-child(71)  { left: 281px; animation-duration: 464ms; }.bar:nth-child(72)  { left: 285px; animation-duration: 453ms; }.bar:nth-child(73)  { left: 289px; animation-duration: 427ms; }.bar:nth-child(74)  { left: 293px; animation-duration: 452ms; }.bar:nth-child(75)  { left: 297px; animation-duration: 447ms; }
-    
-        </style>
             <div class="card">
                 <div class="user">
                     <img class="avatar" src="data:image/jpg;base64,${await getBase64(avatarUrl)}"/>
@@ -205,17 +214,24 @@ const {
                     <a class="button"></a>
                     <div class="clear"></div>
                 </div>
-                <div class="hello">
-                    <img class="neteasecloud" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABoVBMVEUAAADdABvdABvdABvdABvdABvdABvdABvdABvdABvdABvdABvdABvdABvdABvdABvdABviJz7pXW7nS17eBiDugo/////62t7hHDTgEyzufYvdARzlOk/50tf+9vfteojpWGr97vDgGTH3xszjKkHviZXteIb86OrrbHzra3v509jqX3D0rbbfDijiIjnwkp7ynqjqYnP98vPzpa/wjpr++vv87O7pWmv74OPeCiT0q7T3w8n3wsj97/HraXndAx786uzrZ3foU2X++/vpV2nnSVz85+rfECn0rrf//PzjMEbjLEL2u8LeCSP+9/jjL0X4ytD1tb3nTF/74uXkNkv3wMfmRFj//f3pW2z619v86evlO1D0r7fscH/+9PXmRVnnSFv98PL1sbn0qbLgFS786+363eHoVmjhGzPkOE35z9Tyn6n85un62Nz97e/nSl350dbqXm/73+LraHjjK0Hufoz4yc/eBR/51dnnTWDjLUP98fLeCyXwkJz4yM7tdYTlOU7oUmT0qrP1srrranrkM0n4ztP+9fb75Of1tLzfDCZ1sXtGAAAAEHRSTlMAE2Ok0vMup/oNl/4r2zjxygE/KQAAAAFiS0dEFnzRqBkAAAAHdElNRQflCQ0QCDMeCNJTAAABwElEQVQ4y41T9VtCUQx9lAiiTsWjiIndhdiN3d2Kjd3dHX+1F+59DzA+PD9s+9727razTZIUqNQarY5Ip9WoVdJPhOhDSUGoPuSb22AMowCEGQ3+flM4/UC4yeePiKRfEBmh/B/oj4qOMfMI8YYh8P1YAHHxPAuvwyi7LAkJVkoEkpKRwr8Yvf3J9aemATZKQTplZNpEL55u9cKfBWTnEOUizy+fnvEn+MkHCgqJioqBktJChTGVpOaWrQzlVjLbK+CBo1KOUEsabthRVU1UA9TWwVEPNIgAjaT16sYmNBO1oNVJbWjv6ERXNw/QSjqv7gEsRL3IJOrrx4B5EEM8QCdxPYwRJh0YZXIMpTSOCQv3iIBJTDE5jRkmZzFHjfNYEAE8hQuLTC5hmWhlFS6iNayLFLxIN8Cq2pjA5tY2dtisdrEnihRt7qOYyYN+RsJhD1E34BZtCqKOUHHs4SvnxNnHdAFOZaIE1WfnWHMrI8gFLmSq5WFdXqG9jZvXN8CWMixl3Bts2rd3rvuHGwfwaPaNW1mY+CcILD5b/RbGb+Ve7K9pb+8fR5/yYht+XVrfWpv+u/bBDyf46QU/3r/P/wt/IFj7qdvKMgAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMS0wOS0xM1QxNjowODo1MSswMDowMKszm9EAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjEtMDktMTNUMTY6MDg6NTErMDA6MDDabiNtAAAAAElFTkSuQmCC" />
-                    <a class="intro">这周听了多达 ${playCount} 次</a>
+                <div class="most-music">
+                <div class="cover-box">
+                    <img class="cover" src="data:image/jpg;base64,${await getBase64(songCover)}" />
+                    <img class="msk" src="data:image/jpg;base64,${await getBase64('https://s2.music.126.net/style/web2/img/ie6/singlecover.png')}" />
                 </div>
-                <p class="song">${songName}</p>
-                <p class="singer">${songAuthors}</p>
-                <div class="bars">
-                    <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+                <div class="music-list">
+                    <div class="hello">
+                        <img class="neteasecloud" src="https://s1.music.126.net/style/favicon.ico" />
+                        <a class="intro">这周正在听：</a>
+                    </div>
+                    <div>
+                        <p class="song" title="${songName}">${songName}</p>
+                        <p class="singer">${songAuthors}</p>
+                    </div>
                 </div>
-                <img class="cover" src="data:image/jpg;base64,${await getBase64(songCover)}" />
+                </div>
             </div>
+
         </div>
     </foreignObject>
    </a>

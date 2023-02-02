@@ -16,83 +16,6 @@ p {
     padding: 0;
 }
 
-/*.card {
-    border-radius: 12px;
-    background: white;
-    padding: 15px;
-    width: 500px;
-    box-shadow: gray 0 0 8px;
-}
-
-.header {
-
-}
-
-.avatar {
-    width: 60px; 
-    height: 60px;
-    border: 3px solid white;
-    border-radius: 100%;
-    overflow: hidden;
-    float: left;
-}
-.name {
-    margin-left: 10px;
-    line-height: 60px;
-    color: gray;
-    float: left;
-    font-size: 25px;
-}
-
-.listening {
-    font-size: 18px;
-    margin: 15px 0 15px 0;
-}
-
-.player {
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-.cover {
-    float: left;
-    width: 80px;
-    height: 80px;
-    border-radius: 3px;
-}
-
-.player_content {
-    margin-left: 10px;
-    float: left;
-    height: 80px;
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-.song_name {
-    font-size: 20px;
-    margin-top: 16px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    width: 300px;
-}
-
-.song_singer {
-    margin-top: 5px;
-    color: #888888;
-}
-
-.song_count {
-    float: right;
-    line-height: 80px;
-    font-size: 30px;
-}
-
-.clear {
-    clear: both;
-}*/
-
 img {
     margin: 0;
     padding: 0;
@@ -126,7 +49,7 @@ img {
 .username {
     line-height: 32px;
     vertical-align: middle;
-    font-size: 16px;
+    font-size: 14px;
     margin-left: 5px;
 }
 
@@ -141,15 +64,16 @@ img {
     margin-right: 3px;
 }
 
-.hello {
+/* .hello {
     margin: 10px;
     margin-top: 5px;
-}
+} */
 
 .neteasecloud {
     width: 32px;
     height: 32px;
     vertical-align: middle;
+    margin-right: 10px;
 }
 
 .intro {
@@ -159,7 +83,7 @@ img {
     margin-right: 5px;
 }
 
-.song {
+/* .song {
     margin: 0 auto;
     width: 260px;
     font-size: 20px;
@@ -178,10 +102,76 @@ img {
     text-overflow: ellipsis;
     opacity: 0.5;
     font-size: 16px;
-}
+} */
 
-.cover {
+/* .cover {
     width: 300px;
     height: 300px;
     margin-top: 20px;
+} */
+.most-music {
+    display: flex;
+    padding: 10px;
+}
+.most-music .cover-box {
+    position: relative;
+    width: 198px;
+    height: 198px;
+    animation: rotation 25s linear infinite;
+}
+.most-music .cover-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.most-music .cover-box .cover {
+    width: 130px;
+    height: 130px;
+    margin: 34px;
+}
+.most-music .cover-box .msk {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes rotation {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+.music-list {
+    position: relative;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.song {
+    margin: 0 auto;
+    width: 260px;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.singer {
+    margin: 0 auto;
+    width: 260px;
+    margin-top: 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    opacity: 0.5;
+    font-size: 14px;
+}
+.hello {
+    position: absolute;
+    top: 20px;
 }
