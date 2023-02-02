@@ -55,10 +55,10 @@ const {
     var svgContent = "";
     try {
         svgContent = Buffer.from(
-`<svg width="530" height="280" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+`<svg width="535" height="285" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
    <a href="${songLink}">
-    <foreignObject width="530" height="280">
-        <div xmlns="http://www.w3.org/1999/xhtml" class="container" style="padding: 5px;">
+    <foreignObject width="535" height="285">
+        <div xmlns="http://www.w3.org/1999/xhtml" class="container" style="padding: 10px;">
             <style>
             * {
                 box-sizing: border-box;
