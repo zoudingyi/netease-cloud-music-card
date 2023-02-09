@@ -17,27 +17,29 @@ exports.getCard = async function (games) {
   // console.log("ul :>> ", ul);
 
   const getGameList = async () => {
-    const gameHtmlList = games.map(async (item) => {
-      const html = `<li>
-        <div class="one">
-          <img
-            src="${await getBase64(
-              `http://media.steampowered.com/steamcommunity/public/images/apps/${item.item}/${item.img_icon_url}.jpg`
-            )}"
-            alt="">
-          <div class="game-name">${item.name}</div>
-        </div>
-        <div class="two">
-          <div class="time">${(item.playtime_2weeks / 60).toFixed(2)} 小时</div>
-        </div>
-        <div class="three">
-          <div class="total">总时数 ${Math.floor(
-            item.playtime_forever / 60
-          )} 小时</div>
-          <div class="last-time">最后运行日期: ${item.last_playtime}</div>
-        </div>
-      </li>`;
-      return html;
+    const gameHtmlList = games.map((item) => {
+      return new Promise(async (resolve) => {
+        const html = `<li>
+          <div class="one">
+            <img
+              src="${await getBase64(
+                `http://media.steampowered.com/steamcommunity/public/images/apps/${item.item}/${item.img_icon_url}.jpg`
+              )}"
+              alt="">
+            <div class="game-name">${item.name}</div>
+          </div>
+          <div class="two">
+            <div class="time">${(item.playtime_2weeks / 60).toFixed(2)} 小时</div>
+          </div>
+          <div class="three">
+            <div class="total">总时数 ${Math.floor(
+              item.playtime_forever / 60
+            )} 小时</div>
+            <div class="last-time">最后运行日期: ${item.last_playtime}</div>
+          </div>
+        </li>`;
+        resolve(html)
+      })
     });
     const liHtmlList = await Promise.all(gameHtmlList);
     const htmlcode = liHtmlList.reduce((acc, cur) => acc + cur, ''); // 转成字符串
