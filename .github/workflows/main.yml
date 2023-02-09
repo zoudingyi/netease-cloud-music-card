@@ -15,10 +15,12 @@ jobs:
       - name: Setup
         run: npm install
       - name: index.js
-        run: node index.js
+        run: node main.js
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USER_ID: 268165496
           USER_TOKEN: ${{ secrets.USER_TOKEN }}
+          STEAM_ID: 76561198157957389
+          STEAM_TOKEN: ${{ secrets.STEAM_TOKEN }}
           REPO: "netease-cloud-music-card"
           AUTHOR: "zoudingyi"
