@@ -1,4 +1,9 @@
-const getBase64 = require("../utils").getBase64;
+const axios = require("axios").default;
+
+async function getBase64 (url) {
+  const response = await axios.get(url, { responseType: "arraybuffer" });
+  return Buffer.from(response.data, "binary").toString("base64");
+}
 
 exports.getCard = async function (games) {
   // const ul = games.map((game) => {
@@ -11,27 +16,31 @@ exports.getCard = async function (games) {
   // });
   // console.log("ul :>> ", ul);
 
-  const getGameList =  () => {
-    const gameHtmlList = games.map((item) => {
+  const getGameList = async () => {
+    const gameHtmlList = games.map(async (item) => {
       const html = `<li>
-         <div class="one">
-           <div class="game-name">${item.name}</div>
-         </div>
-         <div class="two">
-           <div class="time">${item.playtime_2weeks / 60} 小时</div>
-         </div>
-         <div class="three">
-           <div class="total">总时数 ${Math.floor(
-             item.playtime_forever / 60
-           )} 小时</div>
-           <div class="last-time">最后运行日期: ${item.last_playtime}</div>
-         </div>
-       </li>`;
+        <div class="one">
+          <img
+            src="${await getBase64(
+              `http://media.steampowered.com/steamcommunity/public/images/apps/${item.item}/${item.img_icon_url}.jpg`
+            )}"
+            alt="">
+          <div class="game-name">${item.name}</div>
+        </div>
+        <div class="two">
+          <div class="time">${(item.playtime_2weeks / 60).toFixed(2)} 小时</div>
+        </div>
+        <div class="three">
+          <div class="total">总时数 ${Math.floor(
+            item.playtime_forever / 60
+          )} 小时</div>
+          <div class="last-time">最后运行日期: ${item.last_playtime}</div>
+        </div>
+      </li>`;
       return html;
     });
-    // const liHtmlList = await Promise.all(gameHtmlList);
-    // const htmlcode = liHtmlList.reduce((acc, cur) => acc + cur, ''); // 转成字符串
-    const htmlcode = gameHtmlList.reduce((acc, cur) => acc + cur, ''); // 转成字符串
+    const liHtmlList = await Promise.all(gameHtmlList);
+    const htmlcode = liHtmlList.reduce((acc, cur) => acc + cur, ''); // 转成字符串
     return htmlcode;
   };
   const svg = `<svg width="520" height="202" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -158,7 +167,7 @@ exports.getCard = async function (games) {
           <div class="title">🎮 Steam 最新动态 <span>（过去 2 周）</span></div>
           <div class="box">
             <ul>
-              ${getGameList()}
+              ${await getGameList()}
             </ul>
           </div>
         </div>
