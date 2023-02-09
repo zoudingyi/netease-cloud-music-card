@@ -23,7 +23,7 @@ exports.getCard = async function (games) {
           <div class="one">
             <img
               src="${await getBase64(
-                `http://media.steampowered.com/steamcommunity/public/images/apps/${item.item}/${item.img_icon_url}.jpg`
+                `http://media.steampowered.com/steamcommunity/public/images/apps/${item.appid}/${item.img_icon_url}.jpg`
               )}"
               alt="">
             <div class="game-name">${item.name}</div>
