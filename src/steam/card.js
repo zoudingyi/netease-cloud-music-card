@@ -11,15 +11,10 @@ exports.getCard = async function (games) {
   // });
   // console.log("ul :>> ", ul);
 
-  const getGameList = async () => {
-    const gameHtmlList = games.map(async (item) => {
+  const getGameList =  () => {
+    const gameHtmlList = games.map((item) => {
       const html = `<li>
          <div class="one">
-           <img
-             src="${await getBase64(
-               `http://media.steampowered.com/steamcommunity/public/images/apps/${item.item}/${item.img_icon_url}.jpg`
-             )}"
-             alt="">
            <div class="game-name">${item.name}</div>
          </div>
          <div class="two">
@@ -34,8 +29,9 @@ exports.getCard = async function (games) {
        </li>`;
       return html;
     });
-    const liHtmlList = await Promise.all(gameHtmlList);
-    const htmlcode = liHtmlList.reduce((acc, cur) => acc + cur, ''); // 转成字符串
+    // const liHtmlList = await Promise.all(gameHtmlList);
+    // const htmlcode = liHtmlList.reduce((acc, cur) => acc + cur, ''); // 转成字符串
+    const htmlcode = gameHtmlList.reduce((acc, cur) => acc + cur, ''); // 转成字符串
     return htmlcode;
   };
   const svg = `<svg width="520" height="202" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -162,7 +158,7 @@ exports.getCard = async function (games) {
           <div class="title">🎮 Steam 最新动态 <span>（过去 2 周）</span></div>
           <div class="box">
             <ul>
-              ${await getGameList()}
+              ${getGameList()}
             </ul>
           </div>
         </div>
