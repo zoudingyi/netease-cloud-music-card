@@ -10,7 +10,7 @@ async function getRecentlyPlayedGames() {
     {
       params: {
         key: STEAM_TOKEN,
-        steamid: STEAM_ID,
+        steamid: String(STEAM_ID),
       },
     }
   );
