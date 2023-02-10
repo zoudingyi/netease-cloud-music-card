@@ -5,8 +5,8 @@ const getSteamSvg = require("./src/steam").init;
 const { GH_TOKEN, AUTHOR, REPO } = process.env;
 
 (async () => {
-  // const svgContent = await getNeteaseSvg();
-  const svgContent = await getSteamSvg();
+  const musicSvgContent = await getNeteaseSvg();
+  const steamSvgContent = await getSteamSvg();
 
   try {
     const octokit = new Octokit({
@@ -14,11 +14,20 @@ const { GH_TOKEN, AUTHOR, REPO } = process.env;
     });
 
     const {
-      data: { sha: svgSha },
+      data: { sha: musicSvgSha },
     } = await octokit.git.createBlob({
       owner: AUTHOR,
       repo: REPO,
-      content: svgContent,
+      content: musicSvgContent,
+      encoding: "base64",
+    });
+
+    const {
+      data: { sha: steamSvgSha },
+    } = await octokit.git.createBlob({
+      owner: AUTHOR,
+      repo: REPO,
+      content: steamSvgContent,
       encoding: "base64",
     });
 
@@ -35,13 +44,20 @@ const { GH_TOKEN, AUTHOR, REPO } = process.env;
       tree: [
         {
           mode: "100644",
-          path: "card.svg",
+          path: "musicCard.svg",
           type: "blob",
-          sha: svgSha,
+          sha: musicSvgSha,
+        },
+        {
+          mode: "100644",
+          path: "steamCard.svg",
+          type: "blob",
+          sha: steamSvgSha,
         },
       ],
       base_tree: lastSha,
     });
+    
     const {
       data: { sha: newSHA },
     } = await octokit.git.createCommit({
