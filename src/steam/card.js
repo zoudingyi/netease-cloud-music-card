@@ -142,6 +142,7 @@ exports.getCard = async function (games) {
           .one .game-name {
             margin-left: 5px;
             width: 86px;
+            font-size: 14px;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
@@ -155,6 +156,7 @@ exports.getCard = async function (games) {
       
           .two .time {
           font-weight: bold;
+          font-size: 14px;
           color: #303133;
           }
       

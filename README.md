@@ -1,4 +1,4 @@
-<div align="center"><img src="card.svg"></div>
+<div align="center"><img src="musicCard.svg"></div>
 
 <div align="center"><h1>Netease Cloud Music Card</h1></div>
 
