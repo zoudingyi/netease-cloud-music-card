@@ -46,7 +46,6 @@ exports.init = async function () {
     const content = await getCard({
       username,
       avatarUrl,
-      songLink,
       songName,
       songAuthors,
       songCover,

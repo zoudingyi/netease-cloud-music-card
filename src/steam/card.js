@@ -45,8 +45,8 @@ exports.getCard = async function (games) {
     const htmlcode = liHtmlList.reduce((acc, cur) => acc + cur, ''); // 转成字符串
     return htmlcode;
   };
-  const svg = `<svg width="520" height="202" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <foreignObject width="520" height="202">
+  const svg = `<svg width="420" height="225" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <foreignObject width="420" height="225">
       <div xmlns="http://www.w3.org/1999/xhtml" class="container" style="padding: 10px;">
         <style>
         * {
@@ -96,7 +96,7 @@ exports.getCard = async function (games) {
           }
       
           .card {
-          width: 500px;
+          width: 400px;
           padding: 10px;
           background: white;
           border-radius: 10px;
@@ -113,7 +113,7 @@ exports.getCard = async function (games) {
           }
       
           .box {
-          height: 138px;
+          height: 161px;
           overflow-y: auto;
           }
       
@@ -125,7 +125,7 @@ exports.getCard = async function (games) {
       
           .box>ul li {
           display: grid;
-          grid-template-columns: 1fr 1fr 1fr;
+          grid-template-columns: 1.2fr 1fr 1.5fr;
           }
       
           .box>ul li+li {
@@ -140,7 +140,11 @@ exports.getCard = async function (games) {
           }
       
           .one .game-name {
-          margin-left: 10px;
+            margin-left: 5px;
+            width: 86px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
           }
       
           .two {
