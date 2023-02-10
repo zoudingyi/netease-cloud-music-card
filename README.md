@@ -1,10 +1,12 @@
-<div align="center"><img src="musicCard.svg"></div>
-
 <div align="center"><h1>Netease Cloud Music Card</h1></div>
 
 <div align="center">🎧 在 Github Profile 显示你这周在网易云音乐上最喜欢听的歌曲 🎵</div>
 
-## 🚀使用方法（一定要按顺序）：
+<div align="center"><img src="musicCard.svg"><img src="steamCard.svg"></div>
+
+<br>
+
+## 🚀 使用方法（一定要按顺序）：
 
 ### 🎒 `Fork` 一份此仓库或者自己新建一个仓库
 
@@ -15,26 +17,36 @@
 然后修改 [main.yml](https://github.com/Nthily/netease-music-card/blob/main/.github/workflows/main.yml#L21) 中的 `USER_ID`
 
 ### 2. 获取网易云音乐用户的 `TOKEN`
- * 打开网页控制台，找到 Application 下 Cookie 为 `MUSIC_U` 的值
-![}QV)3FH9@L9LUJ({35JJI}M](https://user-images.githubusercontent.com/31311826/133136019-63bbf232-d8d0-469d-8a45-f46fffdbeaab.png)
- * 打开自己项目中的设置，找到 `Secrets` 新建一个名为 `USER_TOKEN` 的 `Secrets`
- ![image](https://user-images.githubusercontent.com/31311826/133136507-fb2b61f8-1c09-40b8-bb7e-90e3f43b2c55.png)
- * 将第一步获取到的值粘贴进去
+
+- 打开网页控制台，找到 Application 下 Cookie 为 `MUSIC_U` 的值
+  ![}QV)3FH9@L9LUJ({35JJI}M](https://user-images.githubusercontent.com/31311826/133136019-63bbf232-d8d0-469d-8a45-f46fffdbeaab.png)
+- 打开自己项目中的设置，找到 `Secrets` 新建一个名为 `USER_TOKEN` 的 `Secrets`
+  ![image](https://user-images.githubusercontent.com/31311826/133136507-fb2b61f8-1c09-40b8-bb7e-90e3f43b2c55.png)
+- 将第一步获取到的值粘贴进去
 
 ### 3. 修改 `main.yml`
- 将 [main.yml](https://github.com/Nthily/netease-music-card/blob/main/.github/workflows/main.yml#L24) 中的 `AUTHOR` 修改为自己的 Github 用户名即可
+
+将 [main.yml](https://github.com/Nthily/netease-music-card/blob/main/.github/workflows/main.yml#L24) 中的 `AUTHOR` 修改为自己的 Github 用户名即可
 
 ### 4. 引用图片
 
 最后只需要在你的 github profile 仓库添加图片链接即可
 
-`![card](https://github.com/你的 Github 用户名/netease-cloud-music-card/blob/main/card.svg)`
+`![card](https://github.com/你的 Github 用户名/netease-cloud-music-card/blob/main/musicCard.svg)`
 
 你也可以使用 [Jsdelivr](https://www.jsdelivr.com/?docs=gh) CDN 来引用图片
 
-`![card](https://cdn.jsdelivr.net/gh/你的 Github 用户名/netease-cloud-music-card/card.svg)`
+`![card](https://cdn.jsdelivr.net/gh/你的 Github 用户名/netease-cloud-music-card/musicCard.svg)`
 
 你也可以将这个图片部署到你的博客等地方 😋
+
+## 🎮 新增： 获取 steam 最近游玩时间
+
+1. 创建你的(TOKEN) Steam API key. (https://steamcommunity.com/dev/apikey)
+
+2. 找到你的账号的 64 位 ID. (https://steamid.io)
+
+3. 将 [main.yml](https://github.com/Nthily/netease-music-card/blob/main/.github/workflows/main.yml#L24) 中的 `STEAM_TOKEN` 与 `STEAM_ID` 修改为自己的 Steam ID 与 TOKEN. （在 `Secrets` 新建一个 `STEAM_TOKEN` 存进去）
 
 ## 💨 本地测试：
 
@@ -52,17 +64,19 @@ npm install
 
 ## ❤️ 灵感和帮助：
 
-* [spotify-github-profile](https://github.com/kittinan/spotify-github-profile)
+- [spotify-github-profile](https://github.com/kittinan/spotify-github-profile)
 
-* [netease-music-box](https://github.com/Leecason/netease-music-box)
+- [netease-music-box](https://github.com/Leecason/netease-music-box)
 
-* [NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi)
+- [NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi)
+
+- [steam-box](https://github.com/YouEclipse/steam-box/blob/master/README_zh.md)
 
 ## 🤔 工作原理：
 
-* 使用 [NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi) 获取听歌记录
-* 基于 Github API 将 `index.js` 处理好的 `svg` 写入到仓库中
-* 使用 Github Actions 定期更新 `card.svg`
+- 使用 [NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi) 获取听歌记录
+- 基于 Github API 将 `index.js` 处理好的 `svg` 写入到仓库中
+- 使用 Github Actions 定期更新 `card.svg`
 
 ## 📄 开源协议
 
@@ -89,4 +103,3 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-
