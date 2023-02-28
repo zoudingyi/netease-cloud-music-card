@@ -136,39 +136,11 @@
             <div class="game-name">Dota 2</div>
           </div>
           <div class="two">
-            <div class="time">6.17 小时</div>
+            <div class="time">6.30 小时</div>
           </div>
           <div class="three">
-            <div class="total">总时数 7633 小时</div>
-            <div class="last-time">最后运行日期: 2/26/2023</div>
-          </div>
-        </li><li>
-          <div class="one">
-            <img
-              src="data:image/jpg;base64,/9j/4AAQSkZJRgABAQIAJgAmAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCAAgACADAREAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAABgcIBQP/xAApEAABAwIGAgEEAwAAAAAAAAABAgMEBQYABwgREiExQVEUFSKBMjNh/8QAGgEAAwADAQAAAAAAAAAAAAAABAUGAgMHAP/EACsRAAEDAgQFBAIDAAAAAAAAAAECAwQAEQUSITETIkFRYQYycZGhwTOx8P/aAAwDAQACEQMRAD8AlzIGNlHWoEmPf670XW1vJEOPasRl5Ba4jcr5/kVcj6GOtOS5TdjHCbW1zVHCMyu/EvfxVH3Fo7t60qjmguLXqlMhW9GpbdJSUNofcnzSAiO+OJG6eSNwNjsoeMYMY+tYZugAqJzdrJ6itL2Eo5+YkC1vk0b1fTVlk1Xb6sy2rsrhv60aQqqykzmGlQnOLaVqQFJAI/mB34397YzZx2ZlakPtJ4a1W0929CP4JFVnabWrOkX12rhm3kxbOTmTcKv1aNdDlel0mPJMlqKyKY1JeH9K3NgoEd9dnx3gyFjD06UppGQIBI1vmIHUdKXSsDYjMBZKyogdstzUVafdREbInMqxbtg0p95dGbdj1NlLoT9cy5y5JB26IC+t/YHxhDKDcuMGdjbfzVHDYkRpTzzi8yVEEDtpYj8U2rL1t2zaNLiU021WKlGXfarwqLsuchb0ttAJjMKUQdylQaJUfPE4AXEWs5gse3KP3TUOACxHW9EF8a1qCHbhq9n5XVG20XpMQ5clfqE5UiRMjFwKcjsEpCG0rAKet+vXQ23Nwn0oQXVXCPbpYX6HzQRmxluqaaIzncXF/rpQpqz1hW3qCYbdoNDuGgTHH0OSmp9ZU/CLaG+CEtxxshB8HkBv5+TgrDErgXCiCLdtfvevS8snYH7/AFUatv8A4jv1gFK9KYlNNDLDLyNOgPXXc5Ma2IR3CfC5i/TaB7G/X++PnZ1EjBaTIf0QPz4qHxzGHGnBhmHc0hf0gdz/ALzR/qjuFMehWxR2mkxA4kylx09BsBISlPXxuofrDLF3ghDbY061JehYZXIky1HNblv31uT/AFU8iUopP5esTfEuK7BwxWSpRa6V1hdokUeObanlY+p2TTvstGqNOpsegxQhlx1LK1rS2kbbgcu1fr3iij42UZG1gBArluKeh23uNLYcWXlXIFwBc9Ntqws+s5WMyKszFpqUGjwzyYeLZQ44opG/Lf0DvtgXE8TRLXlb9o2pr6T9NrwVkuSP5V7i9wLHS3z1pU/V9HCXii1XvDr/2Q=="
-              alt="" />
-            <div class="game-name">RIDE 4</div>
-          </div>
-          <div class="two">
-            <div class="time">0.02 小时</div>
-          </div>
-          <div class="three">
-            <div class="total">总时数 15 小时</div>
-            <div class="last-time">最后运行日期: 2/13/2023</div>
-          </div>
-        </li><li>
-          <div class="one">
-            <img
-              src="data:image/jpg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD//gA7Q1JFQVRPUjogZ2QtanBlZyB2MS4wICh1c2luZyBJSkcgSlBFRyB2NjIpLCBxdWFsaXR5ID0gOTAK/9sAQwADAgIDAgIDAwMDBAMDBAUIBQUEBAUKBwcGCAwKDAwLCgsLDQ4SEA0OEQ4LCxAWEBETFBUVFQwPFxgWFBgSFBUU/9sAQwEDBAQFBAUJBQUJFA0LDRQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQU/8AAEQgAIAAgAwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8A/LS8vLi9u5p55nlmkcs7uxJYk9Sa+kPgl8KdJ1vQLO41C1gmuz++Ewbdxk4578dulfNTf6xvqa96+EfxdYS2elGFhesfLjWLIDEAHcTjA79uMVxYtVHT/dnz+d0sZWw3Jg781+m51/xy+BukxeHLjVNL8nTry2BmZiSBKoX5lOM44GQcdvevluzvLiyu4Z4JnimjcMjoxBUg9Qa98+MnxmuoU1bwtJp8lvqKAW80jyBlQFcsB6n5sfma+fl/1i/UUYRVFT/efInI6GOw+GdLHv3k9L6uwvHnHdkrnnHWvdfDGueDvFHi/wAKQ6TG/h+4sYwroLcOL12B3ruHKkdsgg5PTv4deWdxZXc0E8LxTRuVdHUgqQehFdr8HdKeTxlYajNKtrZ2cm95XYDJ6BRk9eevtWtaKcW29rn0UKUZ16dR7xffTXudl8S/hzqvj/4y+PBprQeZYzedIsjFcjauccdv8K8U2lZQCCCDgg17h+0TrviL/hOtR1Oy1hLjQpz5cBsZU2pvQbkdVOd/ynLEc4HNeKWlpcX15DDDDJNPI4VURSWYk9BSw/M4Jvsh1Y1I4io5O8b6aa+fr5H/2Q=="
-              alt="" />
-            <div class="game-name">Terraria</div>
-          </div>
-          <div class="two">
-            <div class="time">0.02 小时</div>
-          </div>
-          <div class="three">
-            <div class="total">总时数 24 小时</div>
-            <div class="last-time">最后运行日期: 2/13/2023</div>
+            <div class="total">总时数 7634 小时</div>
+            <div class="last-time">最后运行日期: 2/27/2023</div>
           </div>
         </li>
             </ul>
