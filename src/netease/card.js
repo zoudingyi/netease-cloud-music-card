@@ -197,7 +197,7 @@ exports.getCard = async function ({
                       <a class="intro">这周正在听：</a>
                   </div>
                   <div class="music-info">
-                      <p class="song" title="${songName}">${songName}</p>
+                      <p class="song" title="${songName.replaceAll('"',"'")}">${songName}</p>
                       <p class="singer">${songAuthors}</p>
                   </div>
               </div>
