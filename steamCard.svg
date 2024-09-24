@@ -131,30 +131,30 @@
               <li>
           <div class="one">
             <img
-              src="data:image/jpg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD//gA7Q1JFQVRPUjogZ2QtanBlZyB2MS4wICh1c2luZyBJSkcgSlBFRyB2NjIpLCBxdWFsaXR5ID0gOTAK/9sAQwADAgIDAgIDAwMDBAMDBAUIBQUEBAUKBwcGCAwKDAwLCgsLDQ4SEA0OEQ4LCxAWEBETFBUVFQwPFxgWFBgSFBUU/9sAQwEDBAQFBAUJBQUJFA0LDRQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQU/8AAEQgAIAAgAwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8A/P8A0fwhp2uaVFqepSSyXNzl5Z5bgjLEmtOH4YaRAzFo5Ztx4EkrYX6Yx+tXvBFlba14Kt7a4jWaFo2jdD/vH8qwbvVNV+Gl7Fb3YfUtBc4glP8ArIx1259R6HqOhHIrw5TqznKMJa32/wAj9UpYXA4bC0MRiKCdOUVeVr2b/mXZ9+/yNCT4daLGymS32AnABncAn2+aszxL4PsvC+n/ANq2JuLa5t2VkaOUnDZwDz7nNdLd6PoXxH06K4ilEhTG2aE4kjP91h/Q/h61F8VpHt/CjKkRkWWVEds42DOc+/IA/Gop1antIxcne+qZtjctwiwletCjHkUbxlHW97+Wlip4R8QDw/8ADM6lNEWFvvVFJ/1hMhC/QZOPwNdNpt7pHxC0BsKs9tKNssL/AH429D6EdQRXHeFvHOl+GdAXRdXtbj7RE0kU0LwAjlycEE+9bWi/EfwnaI8NrD/Zsf3uLcIrH/gOc1NalPmlKMHe+jOzLMww3sqFKriIez9moyi1re3fbydzznXdI1X4W+IxPaSuLdyTDMfuyL/dcdyPT8a7bxVfTa98LYb+8gWC4l2SbEJx9/AP4jnHvW1qHxC8K6nF5F00V7GG4jlg3Ln1+YYrI8W+KdL8Q6UdG05GlllRRDHCoxkH5UABzngcYrZOpVlByhqnqzyqtLAZfSxUaGLUqc4vlhe9m/6svxP/2Q=="
-              alt="" />
-            <div class="game-name">Dota 2</div>
-          </div>
-          <div class="two">
-            <div class="time">25.60 小时</div>
-          </div>
-          <div class="three">
-            <div class="total">总时数 8934 小时</div>
-            <div class="last-time">最后运行日期: 9/18/2024</div>
-          </div>
-        </li><li>
-          <div class="one">
-            <img
               src="data:image/jpg;base64,/9j/4AAQSkZJRgABAQIAJQAlAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAgACADASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAABwECAwT/xAAoEAACAgECBgIDAAMAAAAAAAABAgMEBQYRAAchMUFREhMUIpEjM7H/xAAXAQEAAwAAAAAAAAAAAAAAAAAAAQME/8QAGREAAgMBAAAAAAAAAAAAAAAAAQIAAxFB/9oADAMBAAIRAxEAPwAm0jpq1qW/JDBJFXq10M1q3Mdo68Y7sx/4PP8AeHXA8qMFFiPyI6C2w0X2JbvyMWcbbhlhQgAHuPk2/scTyRxVGrpOibDQbTq9+19hGxPyKRA791Co7bHsdjxa5zHqRX8hidJSVLGNrQNLYuWnZK1JdwpCFQWcEsAFA6E7AkdFz2WMzELyWogA0ymQ5T4S3g4JnxwgYwK7WsfKyuv677mJyVYeTsQT4HAXq7TVnTdyJJJYrdKyn21LkPWOxH7Ho+x4/h4c6HMisk+LxOqZKkOItQBoMhTZmgtqD8Pi/wAgGjAKkMCO/Q7DffbnPi8fc0lfFVq5RIlyFX6iNkZWVZNtvDI6nYdNwT54iuxlbG7DoCNEw5KW8Xe0rQ/Kr1X+pXoWjLGp2YMXiJ38MruNz3IA4i1y1r/n5LJaRjppiLUBhs0bpc17S7hiYyv7IAVUhh57bDuHaQ1LY03dmdIY7dKyn026c3WOxH6Po+j4/o4esFzUwdjEmGLIxQbRfBauRVonjG22wlUMrAdh0B98LK2ViV7COCMM5KXLavJNisnqmGq2FqwBIMfSL/TWUn5/OQt+zgliWPTboTuu+3RzktYmhpPINTr1EUxLj6xijUBndlZ9tvCoi9R5bbi17mrhqOEgikycTusKoa+PVpZX/Xt9jBVT0ehPrgI1hqafUdqD/BHTx1RPqp0of9cCeh7J8nzwrrdm1uQ7qBgn/9k="
               alt="" />
             <div class="game-name">Deadlock</div>
           </div>
           <div class="two">
-            <div class="time">23.62 小时</div>
+            <div class="time">26.50 小时</div>
           </div>
           <div class="three">
-            <div class="total">总时数 23 小时</div>
-            <div class="last-time">最后运行日期: 9/22/2024</div>
+            <div class="total">总时数 26 小时</div>
+            <div class="last-time">最后运行日期: 9/23/2024</div>
+          </div>
+        </li><li>
+          <div class="one">
+            <img
+              src="data:image/jpg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD//gA7Q1JFQVRPUjogZ2QtanBlZyB2MS4wICh1c2luZyBJSkcgSlBFRyB2NjIpLCBxdWFsaXR5ID0gOTAK/9sAQwADAgIDAgIDAwMDBAMDBAUIBQUEBAUKBwcGCAwKDAwLCgsLDQ4SEA0OEQ4LCxAWEBETFBUVFQwPFxgWFBgSFBUU/9sAQwEDBAQFBAUJBQUJFA0LDRQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQU/8AAEQgAIAAgAwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8A/P8A0fwhp2uaVFqepSSyXNzl5Z5bgjLEmtOH4YaRAzFo5Ztx4EkrYX6Yx+tXvBFlba14Kt7a4jWaFo2jdD/vH8qwbvVNV+Gl7Fb3YfUtBc4glP8ArIx1259R6HqOhHIrw5TqznKMJa32/wAj9UpYXA4bC0MRiKCdOUVeVr2b/mXZ9+/yNCT4daLGymS32AnABncAn2+aszxL4PsvC+n/ANq2JuLa5t2VkaOUnDZwDz7nNdLd6PoXxH06K4ilEhTG2aE4kjP91h/Q/h61F8VpHt/CjKkRkWWVEds42DOc+/IA/Gop1antIxcne+qZtjctwiwletCjHkUbxlHW97+Wlip4R8QDw/8ADM6lNEWFvvVFJ/1hMhC/QZOPwNdNpt7pHxC0BsKs9tKNssL/AH429D6EdQRXHeFvHOl+GdAXRdXtbj7RE0kU0LwAjlycEE+9bWi/EfwnaI8NrD/Zsf3uLcIrH/gOc1NalPmlKMHe+jOzLMww3sqFKriIez9moyi1re3fbydzznXdI1X4W+IxPaSuLdyTDMfuyL/dcdyPT8a7bxVfTa98LYb+8gWC4l2SbEJx9/AP4jnHvW1qHxC8K6nF5F00V7GG4jlg3Ln1+YYrI8W+KdL8Q6UdG05GlllRRDHCoxkH5UABzngcYrZOpVlByhqnqzyqtLAZfSxUaGLUqc4vlhe9m/6svxP/2Q=="
+              alt="" />
+            <div class="game-name">Dota 2</div>
+          </div>
+          <div class="two">
+            <div class="time">23.98 小时</div>
+          </div>
+          <div class="three">
+            <div class="total">总时数 8934 小时</div>
+            <div class="last-time">最后运行日期: 9/18/2024</div>
           </div>
         </li>
             </ul>
