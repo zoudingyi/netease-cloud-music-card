@@ -150,11 +150,25 @@
             <div class="game-name">Dota 2</div>
           </div>
           <div class="two">
-            <div class="time">11.20 小时</div>
+            <div class="time">7.22 小时</div>
           </div>
           <div class="three">
             <div class="total">总时数 8934 小时</div>
             <div class="last-time">最后运行日期: 9/18/2024</div>
+          </div>
+        </li><li>
+          <div class="one">
+            <img
+              src="data:image/jpg;base64,/9j/4AAQSkZJRgABAQIAJgAmAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCAAgACADAREAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD8w/D3g/VvFLsum2qyqp2mSWZIY89cb3YDOOcZzVKLautiHOKfK3qfRXwh/ZY8N6pbm58W6vPqV4T8mmaDPGUX/rpNhsfgB9TSei1KV2z33Vf+CamieINMU6VpmuaNdtb+cklnepfog7NJGVBP0VlrJS5vhNGrbnw18Xvg7rnwb8RDTtWCXFrPuaz1CAHyrhVOGxnlWU4DIeQcdQQToQegaJLY6B4Y0axtNEvdSeO1aZ7q3kWMtNKMtIPlb7oIRc5yFzgFsVvztwUUtDljTXtJVG9X+Be+F8Xg6Hxnpt1rHiXVvCEdpMs7rcWrObgLz5azxkbCxG3LKAM5J4rGtKTVrHVBLufXfw0+OfibwpqNxqdhqzSrjcHldiFTspz1HXAI+lcy02NG7nif7SHiHTvij4E8VTwTx3htpv7RhcKR5cquFkxn1VnHHHTuK3i7qzIZ5JpfxI1DSfCmlxWUFpLpdlZLbQKEOXbljubP3mdmJ64+gq3UlKyfQzhRjDmkt3qen/Cf9q3wNY2OpeHPGnhW1Rrk7Ptk0CXUCkdirLkfXmuepGUnzJm8WkrM6Px54m8E22iabB4aNtcWGr3DW0lnpsnEUZXlvkyAOeADk/MceqSYHn/iW/03R7DV4NU2r4ZlspIJ5YHzMsr/ACxAAncTuG489AeTWivclnzBoV1b2l+r3W/y8EBk6o3Zv8+tWSWr3WYFvxcW0KTOrbt08YIY+uO/40AXfEXi3+1tI0yGCa5hmQmS6gX5YPMHCOgB4OM54AHbvSsM564vLi7x588k2P8Ano5b+dMR/9k="
+              alt="" />
+            <div class="game-name">PUBG: BATTLEGROUNDS</div>
+          </div>
+          <div class="two">
+            <div class="time">1.55 小时</div>
+          </div>
+          <div class="three">
+            <div class="total">总时数 405 小时</div>
+            <div class="last-time">最后运行日期: 9/28/2024</div>
           </div>
         </li>
             </ul>
