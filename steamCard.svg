@@ -136,11 +136,39 @@
             <div class="game-name">Dota 2</div>
           </div>
           <div class="two">
-            <div class="time">20.18 小时</div>
+            <div class="time">16.92 小时</div>
           </div>
           <div class="three">
             <div class="total">总时数 9529 小时</div>
             <div class="last-time">最后运行日期: 5/11/2025</div>
+          </div>
+        </li><li>
+          <div class="one">
+            <img
+              src="data:image/jpg;base64,/9j/4AAQSkZJRgABAQIAJQAlAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAgACADASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAABwYFAgj/xAAsEAABAgYBAgUDBQAAAAAAAAABAgMABAUGERIhBzETIlFhgRRBcQgkMqGj/8QAGAEBAAMBAAAAAAAAAAAAAAAAAQACAwT/xAAnEQABAwMCBAcAAAAAAAAAAAABAAIRBBIhAxMiMZHRQVFhgaHh8f/aAAwDAQACEQMRAD8A9IzCShhxSACtKSRntnEYFRrSRYcxcEoAf2Bm2weedNgD8xWqQFJUPUY7QC29XtugVzyzuFPU0vSRwMDVahqR7ecj4jF7ox6Lqo6YawuPg5o9jP0leTnWBarFVWSpj6NMycdyNNuPeNBiWcLTfihPiajbHbOOYHL2uJch+n63QwrVyeblpTYHkJSnJP8Anj5hzQQpIKcEHkEHvCx92FWqptlt3m5w6R3XbnKSPtAbQ6ZI0SyuptAqko4/9G85MuOD+TrS0bMqzkcjQn85hw5icuq3GalS68ZdBRO1GnLk1qScb+VWmfcFSvg/iFzZyil19uWnkY+D+oxuKRkbh6b9O6BSZNzSovtBtxQ8zCEJJdXn17mHFiVal5dphhAQ02kIQkdgkDAES9kURqRty2C6giZkaclkAjGFLSjc49cp/s+sVSVk/eIxsZTVa9/AOQJPU9oX/9k="
+              alt="" />
+            <div class="game-name">The Witcher 3: Wild Hunt</div>
+          </div>
+          <div class="two">
+            <div class="time">0.15 小时</div>
+          </div>
+          <div class="three">
+            <div class="total">总时数 12 小时</div>
+            <div class="last-time">最后运行日期: 5/13/2025</div>
+          </div>
+        </li><li>
+          <div class="one">
+            <img
+              src="data:image/jpg;base64,/9j/4AAQSkZJRgABAQIAJgAmAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCAAgACADAREAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAABgcIBQP/xAApEAABAwIGAgEEAwAAAAAAAAABAgMEBQYABwgREiExQVEUFSKBMjNh/8QAGgEAAwADAQAAAAAAAAAAAAAABAUGAgMHAP/EACsRAAEDAgQFBAIDAAAAAAAAAAECAwQAEQUSITETIkFRYQYycZGhwTOx8P/aAAwDAQACEQMRAD8AlzIGNlHWoEmPf670XW1vJEOPasRl5Ba4jcr5/kVcj6GOtOS5TdjHCbW1zVHCMyu/EvfxVH3Fo7t60qjmguLXqlMhW9GpbdJSUNofcnzSAiO+OJG6eSNwNjsoeMYMY+tYZugAqJzdrJ6itL2Eo5+YkC1vk0b1fTVlk1Xb6sy2rsrhv60aQqqykzmGlQnOLaVqQFJAI/mB34397YzZx2ZlakPtJ4a1W0929CP4JFVnabWrOkX12rhm3kxbOTmTcKv1aNdDlel0mPJMlqKyKY1JeH9K3NgoEd9dnx3gyFjD06UppGQIBI1vmIHUdKXSsDYjMBZKyogdstzUVafdREbInMqxbtg0p95dGbdj1NlLoT9cy5y5JB26IC+t/YHxhDKDcuMGdjbfzVHDYkRpTzzi8yVEEDtpYj8U2rL1t2zaNLiU021WKlGXfarwqLsuchb0ttAJjMKUQdylQaJUfPE4AXEWs5gse3KP3TUOACxHW9EF8a1qCHbhq9n5XVG20XpMQ5clfqE5UiRMjFwKcjsEpCG0rAKet+vXQ23Nwn0oQXVXCPbpYX6HzQRmxluqaaIzncXF/rpQpqz1hW3qCYbdoNDuGgTHH0OSmp9ZU/CLaG+CEtxxshB8HkBv5+TgrDErgXCiCLdtfvevS8snYH7/AFUatv8A4jv1gFK9KYlNNDLDLyNOgPXXc5Ma2IR3CfC5i/TaB7G/X++PnZ1EjBaTIf0QPz4qHxzGHGnBhmHc0hf0gdz/ALzR/qjuFMehWxR2mkxA4kylx09BsBISlPXxuofrDLF3ghDbY061JehYZXIky1HNblv31uT/AFU8iUopP5esTfEuK7BwxWSpRa6V1hdokUeObanlY+p2TTvstGqNOpsegxQhlx1LK1rS2kbbgcu1fr3iij42UZG1gBArluKeh23uNLYcWXlXIFwBc9Ntqws+s5WMyKszFpqUGjwzyYeLZQ44opG/Lf0DvtgXE8TRLXlb9o2pr6T9NrwVkuSP5V7i9wLHS3z1pU/V9HCXii1XvDr/2Q=="
+              alt="" />
+            <div class="game-name">RIDE 4</div>
+          </div>
+          <div class="two">
+            <div class="time">0.03 小时</div>
+          </div>
+          <div class="three">
+            <div class="total">总时数 15 小时</div>
+            <div class="last-time">最后运行日期: 5/13/2025</div>
           </div>
         </li>
             </ul>
