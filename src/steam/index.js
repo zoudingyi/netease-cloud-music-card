@@ -33,8 +33,8 @@ async function getLastPlayedTimes() {
 }
 
 exports.init = async function () {
-  const recent = await getRecentlyPlayedGames();
-  const lastTimes = await getLastPlayedTimes();
+  const recent = await getRecentlyPlayedGames() || [];
+  const lastTimes = await getLastPlayedTimes() || [];
   const games = recent.map((element) => {
     const game = lastTimes.find((item) => item.appid === element.appid);
     return Object.assign(element, {
