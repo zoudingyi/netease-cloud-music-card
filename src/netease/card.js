@@ -1,12 +1,17 @@
-const getBase64 = require("../utils").getBase64;
+const { escapeXmlText } = require('../svg');
 
-exports.getCard = async function ({
+exports.renderCard = function renderCard({
   username,
-  avatarUrl,
+  avatarDataUrl,
   songName,
   songAuthors,
-  songCover,
+  songCoverDataUrl,
+  recordMaskDataUrl,
+  logoDataUrl
 }) {
+  const safeUsername = escapeXmlText(username);
+  const safeSongName = escapeXmlText(songName);
+  const safeSongAuthors = escapeXmlText(songAuthors);
   const svg = `<svg width="420" height="225" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <foreignObject width="420" height="225">
       <div xmlns="http://www.w3.org/1999/xhtml" class="container" style="padding: 10px;">
@@ -173,32 +178,24 @@ exports.getCard = async function ({
   
           <div class="card">
               <div class="user">
-                  <img class="avatar" src="data:image/jpg;base64,${await getBase64(
-                    avatarUrl
-                  )}"/>
-                  <a class="username">${username}</a>
+                  <img class="avatar" src="${avatarDataUrl}"/>
+                  <a class="username">${safeUsername}</a>
                   <a class="macOS"></a>
                   <div class="clear"></div>
               </div>
               <div class="most-music">
               <div class="cover-box">
-                  <img class="cover" src="data:image/jpg;base64,${await getBase64(
-                    songCover
-                  )}" />
-                  <img class="msk" src="data:image/jpg;base64,${await getBase64(
-                    "https://s2.music.126.net/style/web2/img/ie6/singlecover.png"
-                  )}" />
+                  <img class="cover" src="${songCoverDataUrl}" />
+                  <img class="msk" src="${recordMaskDataUrl}" />
               </div>
               <div class="music-list">
                   <div class="hello">
-                      <img class="neteasecloud" src="data:image/jpg;base64,${await getBase64(
-                        "https://s1.music.126.net/style/favicon.ico"
-                      )}" />
+                      <img class="neteasecloud" src="${logoDataUrl}" />
                       <a class="intro">这周正在听：</a>
                   </div>
                   <div class="music-info">
-                      <p class="song">${songName}</p>
-                      <p class="singer">${songAuthors}</p>
+                      <p class="song">${safeSongName}</p>
+                      <p class="singer">${safeSongAuthors}</p>
                   </div>
               </div>
               </div>

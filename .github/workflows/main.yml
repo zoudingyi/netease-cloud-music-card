@@ -1,27 +1,37 @@
-name: NeteaseMusic
+name: Update cards
+
 on:
-  push:
   workflow_dispatch:
-    branches:
-      - main
-  schedule: 
-    - cron: "0 12 * * *" # 半天更新一次
+  schedule:
+    - cron: '0 12 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-cards
+  cancel-in-progress: false
 
 jobs:
-  update-card:
-    permissions: write-all
+  update-cards:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@main
-      - name: Setup
-        run: npm install
-      - name: index.js
-        run: node main.js
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+      - run: npm test
+      - run: node main.js
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USER_ID: 268165496
           USER_TOKEN: ${{ secrets.USER_TOKEN }}
           STEAM_ID: '76561198157957389'
           STEAM_TOKEN: ${{ secrets.STEAM_TOKEN }}
-          REPO: "netease-cloud-music-card"
-          AUTHOR: "zoudingyi"
+          REPO: netease-cloud-music-card
+          AUTHOR: zoudingyi

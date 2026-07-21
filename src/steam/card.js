@@ -1,50 +1,27 @@
-const axios = require("axios").default;
+const { escapeXmlText } = require('../svg');
 
-async function getBase64 (url) {
-  const response = await axios.get(url, { responseType: "arraybuffer" });
-  return Buffer.from(response.data, "binary").toString("base64");
-}
-
-exports.getCard = async function (games) {
-  // const ul = games.map((game) => {
-  //   const li = `<li>${game.name}: 最近两周 ${(
-  //     game.playtime_2weeks / 60
-  //   ).toFixed(2)}hours 最近一次 ${game.last_playtime} 总游戏时间 ${Math.floor(
-  //     game.playtime_forever / 60
-  //   )}hours</li>`;
-  //   return li;
-  // });
-  // console.log("ul :>> ", ul);
-
-  const getGameList = async () => {
-    const gameHtmlList = games.map((item) => {
-      return new Promise(async (resolve) => {
-        const html = `<li>
+exports.renderCard = function renderCard(games) {
+  const gameList = games
+    .map(
+      (item) => `<li>
           <div class="one">
             <img
-              src="data:image/jpg;base64,${await getBase64(
-                `http://media.steampowered.com/steamcommunity/public/images/apps/${item.appid}/${item.img_icon_url}.jpg`
-              )}"
+              src="${item.iconDataUrl}"
               alt="" />
-            <div class="game-name">${item.name}</div>
+            <div class="game-name">${escapeXmlText(item.name)}</div>
           </div>
           <div class="two">
-            <div class="time">${(item.playtime_2weeks / 60).toFixed(2)} 小时</div>
+            <div class="time">${item.recentHours.toFixed(2)} 小时</div>
           </div>
           <div class="three">
-            <div class="total">总时数 ${Math.floor(
-              item.playtime_forever / 60
-            )} 小时</div>
-            <div class="last-time">最后运行日期: ${item.last_playtime}</div>
+            <div class="total">总时数 ${Math.floor(item.totalHours)} 小时</div>
+            <div class="last-time">最后运行日期: ${escapeXmlText(
+              item.lastPlayed
+            )}</div>
           </div>
-        </li>`;
-        resolve(html)
-      })
-    });
-    const liHtmlList = await Promise.all(gameHtmlList);
-    const htmlcode = liHtmlList.reduce((acc, cur) => acc + cur, ''); // 转成字符串
-    return htmlcode;
-  };
+        </li>`
+    )
+    .join('');
   const svg = `<svg width="420" height="225" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <foreignObject width="420" height="225">
       <div xmlns="http://www.w3.org/1999/xhtml" class="container" style="padding: 10px;">
@@ -175,7 +152,7 @@ exports.getCard = async function (games) {
           <div class="title">🎮 Steam 最新动态 <span>（过去 2 周）</span></div>
           <div class="box">
             <ul>
-              ${await getGameList()}
+              ${gameList}
             </ul>
           </div>
         </div>

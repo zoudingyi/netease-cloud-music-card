@@ -1,9 +1,22 @@
 {
+  "name": "netease-cloud-music-card",
+  "private": true,
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "check": "prettier --check .",
+    "format": "prettier --write .",
+    "preview": "node scripts/render-fixtures.js",
+    "test": "node --test"
+  },
   "dependencies": {
     "@octokit/rest": "^18.10.0",
     "NeteaseCloudMusicApi": "^4.0.22",
     "axios": "^0.21.4",
-    "dotenv": "^10.0.0",
-    "octokit": "^1.5.0"
+    "dotenv": "^10.0.0"
+  },
+  "devDependencies": {
+    "prettier": "3.8.3"
   }
 }
