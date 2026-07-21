@@ -111,7 +111,7 @@ test(
 
     await assert.rejects(
       () => generator.generate({ steamId: '1', token: 'token' }),
-      /资源/
+      /无法加载 Steam 卡片资源：icon unavailable/
     );
   }
 );

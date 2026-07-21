@@ -105,10 +105,15 @@ exports.createSteamGenerator = function createSteamGenerator({
       let icons;
       try {
         icons = await assetLoader.loadMany(
-          visibleGames.map((game) => game.iconUrl)
+          visibleGames.map((game) => game.iconUrl),
+          {
+            labels: visibleGames.map(
+              (_, index) => `Steam 游戏图标 ${index + 1}`
+            )
+          }
         );
       } catch (error) {
-        throw wrapError('无法加载 Steam 卡片资源', error);
+        throw wrapError(`无法加载 Steam 卡片资源：${error.message}`, error);
       }
 
       return renderCard({

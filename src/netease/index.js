@@ -108,14 +108,19 @@ exports.createNeteaseGenerator = function createNeteaseGenerator({
 
       let assets;
       try {
-        assets = await assetLoader.loadMany([
-          account.avatarUrl,
-          song.songCoverUrl,
-          RECORD_MASK_URL,
-          LOGO_URL
-        ]);
+        assets = await assetLoader.loadMany(
+          [account.avatarUrl, song.songCoverUrl, RECORD_MASK_URL, LOGO_URL],
+          {
+            labels: [
+              '网易云头像',
+              '网易云歌曲封面',
+              '网易云唱片遮罩',
+              '网易云 Logo'
+            ]
+          }
+        );
       } catch (error) {
-        throw wrapError('无法加载网易云卡片资源', error);
+        throw wrapError(`无法加载网易云卡片资源：${error.message}`, error);
       }
 
       return renderCard({

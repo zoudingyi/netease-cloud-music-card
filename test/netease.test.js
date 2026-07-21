@@ -100,3 +100,27 @@ test('netease generator rejects malformed song details', async () => {
     /歌曲信息/
   );
 });
+
+test('netease generator labels resources and preserves safe failure details', async () => {
+  const generator = createNeteaseGenerator({
+    client: createClient(),
+    assetLoader: {
+      async loadMany(_urls, options) {
+        assert.deepEqual(options.labels, [
+          '网易云头像',
+          '网易云歌曲封面',
+          '网易云唱片遮罩',
+          '网易云 Logo'
+        ]);
+        throw new Error(
+          '网易云歌曲封面加载失败（来源：p1.music.126.net；ECONNABORTED）'
+        );
+      }
+    }
+  });
+
+  await assert.rejects(
+    () => generator.generate({ userId: '1', token: 'token' }),
+    /无法加载网易云卡片资源：网易云歌曲封面加载失败/
+  );
+});
