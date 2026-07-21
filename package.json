@@ -7,7 +7,7 @@
   "scripts": {
     "check": "prettier --check .",
     "format": "prettier --write .",
-    "preview": "node scripts/render-fixtures.js",
+    "preview": "node scripts/render-fixtures.js ./card-fixtures.html",
     "test": "node --test"
   },
   "dependencies": {
