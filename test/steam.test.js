@@ -36,6 +36,8 @@ test('steam generator escapes game names and embeds icons', async () => {
   assert.match(svg, /^<svg width="420" height="225"/);
   assert.match(svg, /A&amp;B&lt;Game&gt;/);
   assert.match(svg, /1\.50 小时/);
+  assert.match(svg, /class="media-card steam-card"/);
+  assert.match(svg, /共 1 款/);
   assert.match(svg, /data:image\/jpeg;base64,icon/);
 });
 
@@ -58,12 +60,40 @@ test('steam generator supports empty games and unknown last-played time', async 
 
   assert.match(
     await emptyGenerator.generate({ steamId: '1', token: 'token' }),
-    /<ul>[\s\S]*<\/ul>/
+    /过去两周暂无游戏记录/
   );
   assert.match(
     await unknownGenerator.generate({ steamId: '1', token: 'token' }),
     /最后运行日期: 未知/
   );
+});
+
+test('steam generator displays at most three games and reports the total', async () => {
+  const games = Array.from({ length: 4 }, (_, index) => ({
+    ...recent[0],
+    appid: index + 1,
+    name: `Game ${index + 1}`
+  }));
+  let requestedIcons = 0;
+  const generator = createSteamGenerator({
+    client: createClient({
+      getRecentlyPlayedGames: async () => games,
+      getLastPlayedTimes: async () => []
+    }),
+    assetLoader: {
+      loadMany: async (urls) => {
+        requestedIcons = urls.length;
+        return urls.map(() => 'data:image/jpeg;base64,icon');
+      }
+    }
+  });
+
+  const svg = await generator.generate({ steamId: '1', token: 'token' });
+
+  assert.equal(requestedIcons, 3);
+  assert.equal((svg.match(/class="game-row"/g) || []).length, 3);
+  assert.match(svg, /共 4 款/);
+  assert.doesNotMatch(svg, /Game 4/);
 });
 
 test(

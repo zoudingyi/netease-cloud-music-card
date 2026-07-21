@@ -43,6 +43,9 @@ test('netease generator returns escaped raw SVG with fixed dimensions', async ()
   assert.match(svg, /A&amp;B&lt;/);
   assert.match(svg, /Song &amp; &lt;One&gt;/);
   assert.match(svg, /A &gt; B/);
+  assert.match(svg, /class="media-card netease-card"/);
+  assert.match(svg, /本周最常听/);
+  assert.match(svg, /prefers-reduced-motion/);
   assert.doesNotMatch(svg, /data:image\/jpg;base64,data:/);
 });
 

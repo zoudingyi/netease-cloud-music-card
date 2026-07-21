@@ -100,20 +100,24 @@ exports.createSteamGenerator = function createSteamGenerator({
         lastTimes.map((game) => [game.appid, game])
       );
       const games = recent.map((game) => normalizeGame(game, lastPlayedByApp));
+      const visibleGames = games.slice(0, 3);
 
       let icons;
       try {
-        icons = await assetLoader.loadMany(games.map((game) => game.iconUrl));
+        icons = await assetLoader.loadMany(
+          visibleGames.map((game) => game.iconUrl)
+        );
       } catch (error) {
         throw wrapError('无法加载 Steam 卡片资源', error);
       }
 
-      return renderCard(
-        games.map((game, index) => ({
+      return renderCard({
+        totalGames: games.length,
+        games: visibleGames.map((game, index) => ({
           ...game,
           iconDataUrl: icons[index]
         }))
-      );
+      });
     }
   });
 };
