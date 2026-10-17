@@ -2,7 +2,7 @@
 
 ## 项目结构与模块组织
 
-本项目使用 CommonJS Node.js 生成网易云音乐和 Steam 资料卡片。`main.js` 是唯一运行入口，只负责加载配置和组装更新流程。`src/config.js` 校验环境变量，`src/assets.js` 处理远程图片，`src/update.js` 保证两张卡片原子更新，`src/github/publisher.js` 负责 GitHub 提交。平台数据与 SVG 模板分别位于 `src/netease/` 和 `src/steam/`。测试放在 `test/`，已生成文件为根目录的 `musicCard.svg` 与 `steamCard.svg`。
+本项目使用 CommonJS Node.js 生成网易云音乐和 Steam 资料卡片。`main.js` 是唯一运行入口，只负责加载配置和组装更新流程。`src/config.js` 校验环境变量，`src/assets.js` 处理远程图片，`src/update.js` 隔离各平台生成失败，并将成功的卡片作为一个原子提交更新，`src/github/publisher.js` 负责 GitHub 提交。平台数据与 SVG 模板分别位于 `src/netease/` 和 `src/steam/`。测试放在 `test/`，已生成文件为根目录的 `musicCard.svg` 与 `steamCard.svg`。
 
 ## 构建、测试与开发命令
 
@@ -21,7 +21,7 @@
 
 ## 测试指南
 
-测试文件命名为 `*.test.js`，每个测试聚焦一个可观察行为。外部请求必须使用 fixture Adapter，CI 中禁止依赖真实凭据或网络。至少覆盖成功、空数据、畸形响应、资源失败及特殊 XML 字符。发布相关测试必须证明生成失败时不会调用 ref 更新。
+测试文件命名为 `*.test.js`，每个测试聚焦一个可观察行为。外部请求必须使用 fixture Adapter，CI 中禁止依赖真实凭据或网络。至少覆盖成功、空数据、畸形响应、资源失败及特殊 XML 字符。发布相关测试必须证明全部生成失败时不会调用 ref 更新，部分生成失败时仅更新成功的卡片并保留失败卡片的旧版本。
 
 ## 提交与拉取请求规范
 

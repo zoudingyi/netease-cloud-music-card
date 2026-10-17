@@ -37,6 +37,12 @@ async function main() {
     publisher
   });
 
+  for (const { filename, error } of result.failures) {
+    console.warn(
+      `警告：${filename} 生成失败，保留已有卡片：${error?.message ?? String(error)}`
+    );
+  }
+
   if (result.changed) {
     console.log(`卡片已更新，提交：${result.commitSha}`);
   } else {

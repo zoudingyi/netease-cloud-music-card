@@ -14,7 +14,7 @@ exports.runCardUpdate = async function runCardUpdate({
   }
 
   const entries = Object.entries(generators);
-  const generated = await Promise.all(
+  const results = await Promise.allSettled(
     entries.map(async ([filename, generate]) => {
       const svg = await generate();
       assertCardSvg(svg, filename);
@@ -22,12 +22,35 @@ exports.runCardUpdate = async function runCardUpdate({
     })
   );
 
+  const generated = [];
+  const failures = [];
+  results.forEach((result, index) => {
+    if (result.status === 'fulfilled') {
+      generated.push(result.value);
+    } else {
+      failures.push({ filename: entries[index][0], error: result.reason });
+    }
+  });
+
+  if (generated.length === 0) {
+    throw new AggregateError(
+      failures.map(({ error }) => error),
+      `所有卡片生成失败：${failures
+        .map(
+          ({ filename, error }) =>
+            `${filename}: ${error?.message ?? String(error)}`
+        )
+        .join('；')}`
+    );
+  }
+
   const { owner, repo, branch } = config.github;
-  return publisher.publish({
+  const published = await publisher.publish({
     owner,
     repo,
     branch,
     message: 'Update SVG periodically',
     files: Object.fromEntries(generated)
   });
+  return { ...published, failures };
 };

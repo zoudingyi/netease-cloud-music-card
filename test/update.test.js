@@ -31,39 +31,73 @@ test('runCardUpdate publishes both cards in one call', async () => {
   assert.equal(result.commitSha, 'commit');
 });
 
-test('runCardUpdate never publishes when one generator fails', async () => {
-  let publishCalls = 0;
-
-  await assert.rejects(() =>
-    runCardUpdate({
+for (const failedFile of ['musicCard.svg', 'steamCard.svg']) {
+  test(`runCardUpdate publishes the other card when ${failedFile} fails`, async () => {
+    const failure = new Error('platform unavailable');
+    const calls = [];
+    const generators = {
+      'musicCard.svg': async () => svg,
+      'steamCard.svg': async () => svg
+    };
+    generators[failedFile] = () => {
+      throw failure;
+    };
+    const result = await runCardUpdate({
       config,
-      generators: {
-        'musicCard.svg': async () => svg,
-        'steamCard.svg': async () => {
-          throw new Error('steam unavailable');
-        }
-      },
+      generators,
       publisher: {
-        async publish() {
-          publishCalls += 1;
+        async publish(input) {
+          calls.push(input);
+          return { changed: true, commitSha: 'commit' };
         }
       }
-    })
-  );
+    });
+    const successfulFile = Object.keys(generators).find(
+      (file) => file !== failedFile
+    );
+    assert.equal(calls.length, 1);
+    assert.deepEqual(calls[0].files, { [successfulFile]: svg });
+    assert.deepEqual(result.failures, [
+      { filename: failedFile, error: failure }
+    ]);
+    assert.equal(result.changed, true);
+  });
+}
 
-  assert.equal(publishCalls, 0);
-});
+for (const invalidSvg of ['', '<svg></svg>']) {
+  test(`runCardUpdate skips invalid SVG ${JSON.stringify(invalidSvg)} even when the other card is unchanged`, async () => {
+    const result = await runCardUpdate({
+      config,
+      generators: {
+        'musicCard.svg': async () => invalidSvg,
+        'steamCard.svg': async () => svg
+      },
+      publisher: {
+        async publish(input) {
+          assert.deepEqual(input.files, { 'steamCard.svg': svg });
+          return { changed: false, commitSha: 'head' };
+        }
+      }
+    });
+    assert.equal(result.changed, false);
+    assert.equal(result.failures[0].filename, 'musicCard.svg');
+    assert.match(result.failures[0].error.message, /musicCard\.svg/);
+  });
+}
 
-test('runCardUpdate rejects empty or malformed card artifacts', async () => {
+test('runCardUpdate never publishes when all generators fail', async () => {
   let publishCalls = 0;
-
   await assert.rejects(
     () =>
       runCardUpdate({
         config,
         generators: {
-          'musicCard.svg': async () => '',
-          'steamCard.svg': async () => svg
+          'musicCard.svg': async () => {
+            throw new Error('music unavailable');
+          },
+          'steamCard.svg': async () => {
+            throw new Error('steam unavailable');
+          }
         },
         publisher: {
           async publish() {
@@ -71,8 +105,35 @@ test('runCardUpdate rejects empty or malformed card artifacts', async () => {
           }
         }
       }),
-    /musicCard\.svg/
+    (error) => {
+      assert.ok(error instanceof AggregateError);
+      assert.match(error.message, /musicCard\.svg/);
+      assert.match(error.message, /steamCard\.svg/);
+      assert.equal(error.errors.length, 2);
+      return true;
+    }
   );
-
   assert.equal(publishCalls, 0);
+});
+
+test('runCardUpdate propagates publishing failure after partial generation', async () => {
+  const failure = new Error('publish failed');
+  await assert.rejects(
+    () =>
+      runCardUpdate({
+        config,
+        generators: {
+          'musicCard.svg': async () => svg,
+          'steamCard.svg': async () => {
+            throw new Error('steam unavailable');
+          }
+        },
+        publisher: {
+          async publish() {
+            throw failure;
+          }
+        }
+      }),
+    (error) => error === failure
+  );
 });

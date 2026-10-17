@@ -105,3 +105,49 @@ test('publisher propagates ref conflicts', async () => {
     /发布卡片失败/
   );
 });
+
+for (const failedFile of ['musicCard.svg', 'steamCard.svg']) {
+  test(`partial update preserves the base tree without replacing ${failedFile}`, async () => {
+    const { runCardUpdate } = require('../src/update');
+    const { octokit, calls } = createOctokit();
+    const generators = {
+      'musicCard.svg': async () => '<svg width="420" height="225"></svg>',
+      'steamCard.svg': async () => '<svg width="420" height="225"></svg>'
+    };
+    generators[failedFile] = async () => {
+      throw new Error('unavailable');
+    };
+    await runCardUpdate({
+      config: { github: { owner: 'owner', repo: 'repo', branch: 'main' } },
+      generators,
+      publisher: createGitHubPublisher(octokit)
+    });
+    const tree = calls.find(([name]) => name === 'createTree')[1];
+    assert.equal(tree.base_tree, 'base-tree');
+    assert.deepEqual(
+      tree.tree.map(({ path }) => path),
+      Object.keys(generators).filter((file) => file !== failedFile)
+    );
+    assert.equal(calls.filter(([name]) => name === 'updateRef').length, 1);
+  });
+}
+
+test('all generation failures never reach the GitHub adapter', async () => {
+  const { runCardUpdate } = require('../src/update');
+  const { octokit, calls } = createOctokit();
+  await assert.rejects(
+    () =>
+      runCardUpdate({
+        config: { github: { owner: 'owner', repo: 'repo', branch: 'main' } },
+        generators: {
+          'musicCard.svg': async () => '',
+          'steamCard.svg': async () => {
+            throw new Error('unavailable');
+          }
+        },
+        publisher: createGitHubPublisher(octokit)
+      }),
+    AggregateError
+  );
+  assert.deepEqual(calls, []);
+});
